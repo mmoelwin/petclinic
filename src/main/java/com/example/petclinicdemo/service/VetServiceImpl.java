@@ -5,6 +5,7 @@ import com.example.petclinicdemo.repository.VetRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VetServiceImpl implements VetService {
@@ -28,5 +29,11 @@ public class VetServiceImpl implements VetService {
     @Override
     public List<Vet> findAll() {
         return this.vetRepository.findAll();
+    }
+
+    @Override
+    public Vet searchVetLastName(String name) {
+
+        return vetRepository.findByLastName(name).orElse(null);
     }
 }

@@ -4,12 +4,13 @@ import com.example.petclinicdemo.model.Vet;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface VetService {
-    public Vet create(Vet vet);
-    public Vet findById(long id);
-    public List<Vet> findAll();
-
+    Vet create(Vet vet);
+    Vet findById(long id);
+    List<Vet> findAll();
+    Vet searchVetLastName (String name);
 
 }

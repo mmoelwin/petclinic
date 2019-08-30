@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="./layout/viewlayout.html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <div layout:fragment="context">
+        <div class="container">
+            <form action="#" th:action="@{/addowner}" th:object="${owner}" method="post">
+              <div class="row form-group">
+                  <div class="col-md-5">
+                      <label for="fname">First name</label>
+                  </div>
+                  <div>
+                      <input type="text" th:field="*{firstName}" id="fname" class="col-md-7 form-control">
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
